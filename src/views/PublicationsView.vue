@@ -303,6 +303,7 @@ function referenceId(entry) {
   margin: 0;
   color: var(--text-soft);
   line-height: 1.75;
+  overflow-wrap: anywhere;
 }
 
 .publication-citation {
@@ -334,6 +335,7 @@ function referenceId(entry) {
   color: var(--accent-soft);
   text-decoration: underline;
   text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
 }
 
 .featured-video {
@@ -423,6 +425,14 @@ function referenceId(entry) {
   .featured-card--review,
   .featured-card--video {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .publication-citation,
+  .featured-reference {
+    padding-left: 0;
+    text-indent: 0;
   }
 }
 </style>

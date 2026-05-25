@@ -66,6 +66,7 @@ import { navigation } from '../data/siteContent.js'
   display: inline-flex;
   align-items: center;
   gap: 0.85rem;
+  min-width: 0;
 }
 
 .brand__glow {
@@ -80,6 +81,7 @@ import { navigation } from '../data/siteContent.js'
   display: grid;
   gap: 0.08rem;
   line-height: 1;
+  min-width: 0;
 }
 
 .brand__text strong {
@@ -160,9 +162,14 @@ import { navigation } from '../data/siteContent.js'
 
   .mobile-nav {
     display: block;
+    position: relative;
+    margin-left: auto;
   }
 
   .mobile-nav summary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     cursor: pointer;
     padding: 0.8rem 0.9rem;
@@ -171,11 +178,17 @@ import { navigation } from '../data/siteContent.js'
     background: rgba(255, 255, 255, 0.03);
   }
 
+  .mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
   .mobile-nav__panel {
     position: absolute;
     right: 1rem;
     top: 66px;
     width: min(22rem, calc(100% - 2rem));
+    max-height: calc(100dvh - 5.5rem);
+    overflow: auto;
     border: 1px solid var(--border);
     border-radius: 1rem;
     background: rgba(8, 14, 21, 0.97);
@@ -199,6 +212,32 @@ import { navigation } from '../data/siteContent.js'
     display: block;
     padding: 0.6rem 0;
     color: var(--text-soft);
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header__inner {
+    width: min(var(--content-width), calc(100% - 1rem));
+    gap: 0.75rem;
+  }
+
+  .brand {
+    gap: 0.65rem;
+  }
+
+  .brand__text strong {
+    font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand__text span {
+    display: none;
+  }
+
+  .mobile-nav__panel {
+    right: 0;
+    width: min(20rem, calc(100vw - 1rem));
   }
 }
 </style>

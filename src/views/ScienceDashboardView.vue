@@ -1905,6 +1905,7 @@ onBeforeUnmount(() => {
 
 .recovery-table {
   width: 100%;
+  min-width: 42rem;
   border-collapse: collapse;
   font-size: 0.9rem;
 }
@@ -2190,6 +2191,19 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 640px) {
+  .species-treemap-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .species-scale-switch {
+    width: 100%;
+  }
+
+  .species-scale-switch__button {
+    flex: 1 1 0;
+  }
+
   .dashboard-headline__metrics {
     grid-template-columns: 1fr;
   }
@@ -2202,8 +2216,30 @@ onBeforeUnmount(() => {
     grid-template-columns: 1fr;
   }
 
+  .dashboard-map-shell,
   .dashboard-map {
-    min-height: 420px;
+    min-height: 34rem;
+  }
+
+  .dashboard-map__header {
+    top: 0.55rem;
+    left: 0.55rem;
+    right: 4rem;
+    gap: 0.35rem;
+  }
+
+  .dashboard-map__label {
+    font-size: 1rem;
+  }
+
+  .dashboard-map__legend {
+    left: 0.55rem;
+    right: 0.55rem;
+    bottom: 0.55rem;
+    gap: 0.5rem 0.8rem;
+    padding: 0.55rem 0.65rem;
+    max-width: none;
+    font-size: 0.75rem;
   }
 
   .map-controls {
@@ -2212,9 +2248,10 @@ onBeforeUnmount(() => {
   }
 
   .recovery-map-settings {
-    top: 0.55rem;
-    right: 3.65rem;
-    width: min(16rem, calc(100% - 4.3rem));
+    top: 3.7rem;
+    left: 0.55rem;
+    right: 0.55rem;
+    width: auto;
   }
 
   .dashboard-selector :deep(.chart-wrap) {
@@ -2223,6 +2260,15 @@ onBeforeUnmount(() => {
 
   .temporal-panel :deep(.chart-wrap) {
     min-height: 280px;
+  }
+
+  .recovery-table {
+    min-width: 36rem;
+  }
+
+  .recovery-table__date,
+  .recovery-table__species {
+    white-space: normal;
   }
 }
 </style>

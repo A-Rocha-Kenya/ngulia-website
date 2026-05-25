@@ -1286,6 +1286,11 @@ onBeforeUnmount(() => {
   }
 
   .home-map-section__panel {
+    min-height: max(44rem, calc(100svh - var(--header-height)));
+  }
+
+  .home-map-section__inner,
+  .home-map-section__viewport {
     min-height: calc(100svh - var(--header-height));
   }
 
@@ -1308,15 +1313,15 @@ onBeforeUnmount(() => {
 
   .home-map-section__content {
     width: 100%;
-    min-height: auto;
+    min-height: inherit;
     align-content: start;
-    padding: 1rem 0.75rem 1rem;
+    padding: 1rem 0.75rem 13rem;
   }
 
   .home-map-section__content::before {
     right: 0;
     bottom: auto;
-    height: 58%;
+    height: 68%;
     background: linear-gradient(
       180deg,
       rgba(6, 10, 15, 0.94) 0%,
@@ -1344,6 +1349,8 @@ onBeforeUnmount(() => {
     top: auto;
     bottom: 0.55rem;
     width: auto;
+    max-height: min(48svh, 26rem);
+    overflow: auto;
     gap: 0.48rem;
     padding: 0.62rem;
   }

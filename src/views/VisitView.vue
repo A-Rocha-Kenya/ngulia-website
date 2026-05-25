@@ -470,7 +470,7 @@ onBeforeUnmount(() => {
   }
 
   .visit-map-card {
-    min-height: 18rem;
+    min-height: 20rem;
   }
 }
 </style>
