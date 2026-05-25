@@ -79,13 +79,15 @@
 </template>
 
 <script setup>
+import { publicAsset } from '../lib/publicAsset'
+
 const currentTeam = [
   {
     name: 'Colin Jackson',
     affiliation: 'A Rocha Kenya; long-term Ngulia field organiser',
     bio:
       'Recent Ngulia reports consistently place Colin Jackson among the core organisers and contacts. The archive material also points to his role in training support, field coordination, and maintaining continuity during the later phase of the project.',
-    photo: '/history-archive/ngulia-2012-field-1.jpg',
+    photo: publicAsset('history-archive/ngulia-2012-field-1.jpg'),
     photoAlt: 'Field team gathered around a table during a ringing session.',
     socials: [{ label: 'Email', href: 'mailto:colin.jackson@arocha.org' }]
   },
@@ -94,7 +96,7 @@ const currentTeam = [
     affiliation: 'Affiliation to confirm',
     bio:
       'Placeholder card for an additional current team member. Replace with the confirmed name, organisation, short role description, and contact or profile links.',
-    photo: '/history-archive/ngulia-2011-group.jpg',
+    photo: publicAsset('history-archive/ngulia-2011-group.jpg'),
     photoAlt: 'Group portrait of Ngulia participants and collaborators.',
     socials: [{ label: 'Profile pending', href: '#' }]
   },
@@ -103,7 +105,7 @@ const currentTeam = [
     affiliation: 'Affiliation to confirm',
     bio:
       'Placeholder card for a second additional current team member. Replace with the confirmed name, organisation, short role description, and contact or profile links.',
-    photo: '/history-archive/ngulia-2010-nets.jpg',
+    photo: publicAsset('history-archive/ngulia-2010-nets.jpg'),
     photoAlt: 'Ringing team working beside mist nets in misty conditions.',
     socials: [{ label: 'Profile pending', href: '#' }]
   }
@@ -115,7 +117,7 @@ const historicalTeam = [
     affiliation: 'Long-term scientific lead',
     bio:
       'David Pearson appears throughout the historical material as one of the central figures in building and documenting the Ngulia project, from the early confirmation of the migration phenomenon to the later synthesis reports.',
-    photo: '/history-archive/djp-pole.jpg',
+    photo: publicAsset('history-archive/djp-pole.jpg'),
     photoAlt: 'Fieldworker carrying bird bags during ringing work.',
     socials: [{ label: 'Archive contact', href: 'mailto:dpearson251@gmail.com' }]
   },
@@ -124,7 +126,7 @@ const historicalTeam = [
     affiliation: 'Long-term project leader and organiser',
     bio:
       'Graeme Backhurst is repeatedly visible in the archive as a leading organiser, contact, and co-author. The older thanks documents and later reports both show his central role in the long-running Ngulia effort.',
-    photo: '/history-archive/ngulia-1973-night-graeme.jpg',
+    photo: publicAsset('history-archive/ngulia-1973-night-graeme.jpg'),
     photoAlt: 'Historic night photograph associated with the early Ngulia field period.',
     socials: [{ label: 'Archive contact', href: 'mailto:graeme.backhurst@gmail.com' }]
   },
@@ -133,7 +135,7 @@ const historicalTeam = [
     affiliation: 'Early project contributor',
     bio:
       'Daphne Backhurst is named in the historical notes among the early contributors who helped confirm that the migrant falls at Ngulia were a recurring phenomenon rather than an isolated event.',
-    photo: '/history-archive/ngulia-2011-group.jpg',
+    photo: publicAsset('history-archive/ngulia-2011-group.jpg'),
     photoAlt: 'Group portrait of Ngulia participants and collaborators.',
     socials: []
   },
@@ -142,7 +144,7 @@ const historicalTeam = [
     affiliation: 'Early project contributor',
     bio:
       'Peter Britton is listed in the historical notes among the ornithologists involved in the early years when the field observations at Ngulia were being established into a repeatable scientific effort.',
-    photo: '/history-archive/ngulia-2010-nets.jpg',
+    photo: publicAsset('history-archive/ngulia-2010-nets.jpg'),
     photoAlt: 'Ringing team working beside mist nets in misty conditions.',
     socials: []
   },
@@ -151,7 +153,7 @@ const historicalTeam = [
     affiliation: 'Early project contributor',
     bio:
       'Hazel Britton is also named in the early project history and belongs to the group of contributors associated with the formative years of the Ngulia ringing programme.',
-    photo: '/history-archive/ngulia-2011-group.jpg',
+    photo: publicAsset('history-archive/ngulia-2011-group.jpg'),
     photoAlt: 'Group portrait of Ngulia participants and collaborators.',
     socials: []
   }

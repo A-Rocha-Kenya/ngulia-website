@@ -11,7 +11,7 @@
 
     <section class="vimig-hero">
       <figure class="panel vimig-photo-card">
-        <img src="/generated/photos/eurasian-roller.jpg" alt="Eurasian Roller photographed for the Ngulia website." />
+        <img :src="publicAsset('generated/photos/eurasian-roller.jpg')" alt="Eurasian Roller photographed for the Ngulia website." />
         <figcaption>
           Eurasian Roller is one of the clearest visible migrants at Ngulia, often seen in
           loose flocks passing the valley in the morning, especially in early December.
@@ -99,7 +99,7 @@
         </article>
 
         <figure class="panel vimig-photo-card vimig-photo-card--secondary">
-          <img src="/generated/photos/barn-swallow.jpg" alt="Barn Swallow photographed for the Ngulia website." />
+          <img :src="publicAsset('generated/photos/barn-swallow.jpg')" alt="Barn Swallow photographed for the Ngulia website." />
           <figcaption>
             Hirundines are part of the daytime picture too. A Barn Swallow controlled at Ngulia
             carried a ring from Kazakhstan in the 2013 season update.
@@ -165,6 +165,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import StatCard from '../components/StatCard.vue'
+import { publicAsset } from '../lib/publicAsset'
 
 const heroPills = ['Rollers', 'Falcons', 'Raptors', 'Bee-eaters', 'Hirundines']
 

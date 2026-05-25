@@ -43,27 +43,29 @@
 </template>
 
 <script setup>
+import { publicAsset } from '../lib/publicAsset'
+
 const primaryPartners = [
   {
     name: 'A Rocha Kenya',
     description:
       'A Rocha Kenya appears in the later project material through Colin Jackson and represents one of the clearest current organizational anchors around the Ngulia work.',
     url: 'https://www.arocha.or.ke/',
-    logo: '/partner-logos/a-rocha-kenya.svg'
+    logo: publicAsset('partner-logos/a-rocha-kenya.svg')
   },
   {
     name: 'Kenya Wildlife Service',
     description:
       'The Ngulia reports repeatedly thank Kenya Wildlife Service for permission to ring at the site and for continued support for the project over many years.',
     url: 'https://www.kws.go.ke/',
-    logo: '/partner-logos/kws.png'
+    logo: publicAsset('partner-logos/kws.png')
   },
   {
     name: 'Ngulia Lodge',
     description:
       'Ngulia Lodge is central to the field operation itself, providing the physical setting, practical support, and continuity that made the migration project possible.',
     url: 'https://nguliasafarilodge.com/',
-    logo: '/partner-logos/ngulia-lodge.png'
+    logo: publicAsset('partner-logos/ngulia-lodge.png')
   }
 ]
 
@@ -74,7 +76,7 @@ const secondaryPartners = [
       'The museum network appears directly in the reports as a funding and scientific partner, and the historical notes also connect the earliest observations to museum collecting in Nairobi.',
     url: 'https://nmk.go.ke/',
     linkLabel: 'National Museums of Kenya',
-    logo: '/partner-logos/nmk.webp'
+    logo: publicAsset('partner-logos/nmk.webp')
   },
   {
     name: 'Nature Kenya',
@@ -82,7 +84,7 @@ const secondaryPartners = [
       'Nature Kenya is acknowledged in the archive reports, including through the Bird Committee / EANHS history that supported participation and wider ornithological work around the project.',
     url: 'https://naturekenya.org/',
     linkLabel: 'Nature Kenya',
-    logo: '/partner-logos/nature-kenya.png'
+    logo: publicAsset('partner-logos/nature-kenya.png')
   },
   {
     name: 'Wetland Trust',
@@ -90,7 +92,7 @@ const secondaryPartners = [
       'The Wetland Trust is one of the most frequently acknowledged funding partners in the reports, repeatedly credited for rings and financial support.',
     url: 'https://www.wwt.org.uk/',
     linkLabel: 'Wetland Trust / WWT',
-    logo: '/partner-logos/wwt.svg'
+    logo: publicAsset('partner-logos/wwt.svg')
   },
   {
     name: 'Swedish Ringing Centre',
@@ -98,7 +100,7 @@ const secondaryPartners = [
       'The reports repeatedly thank the Swedish Ringing Centre for ring support and the forwarding of recovery information. The linked page sits within the Swedish Museum of Natural History.',
     url: 'https://www.nrm.se/english/researchandcollections/environmentalresearchandmonitoring/birdmonitoring/thebirdringingcentre.9001658.html',
     linkLabel: 'Swedish Ringing Centre',
-    logo: '/partner-logos/nrm.svg'
+    logo: publicAsset('partner-logos/nrm.svg')
   },
   {
     name: 'Earthwatch',
@@ -106,7 +108,7 @@ const secondaryPartners = [
       'The older thanks material names Earthwatch teams and co-leaders as part of the field effort during the project’s volunteer-supported phases.',
     url: 'https://www.earthwatch.org/',
     linkLabel: 'Earthwatch',
-    logo: '/partner-logos/earthwatch.svg'
+    logo: publicAsset('partner-logos/earthwatch.svg')
   },
   {
     name: 'Kenya Safari Lodges & Hotels',
@@ -114,7 +116,7 @@ const secondaryPartners = [
       'The thanks material identifies Kenya Safari Lodges & Hotels as the company behind Ngulia Safari Lodge in the later management period, making it part of the project’s operational support history.',
     url: 'https://nguliasafarilodge.com/',
     linkLabel: 'Ngulia Lodge site',
-    logo: '/partner-logos/ngulia-lodge.png'
+    logo: publicAsset('partner-logos/ngulia-lodge.png')
   }
 ]
 </script>

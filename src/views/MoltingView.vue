@@ -33,7 +33,7 @@
       </article>
 
       <figure class="panel molt-photo-card">
-        <img src="/history-archive/ngulia-2012-field-1.jpg" alt="Ngulia team working around the ringing table." />
+        <img :src="publicAsset('history-archive/ngulia-2012-field-1.jpg')" alt="Ngulia team working around the ringing table." />
         <figcaption>
           The ringing table is where plumage, feathers, moult, weight, wing length, fat and
           written notes become one scientific record.
@@ -117,7 +117,7 @@
         </article>
 
         <figure class="panel molt-photo-card molt-photo-card--species">
-          <img src="/generated/photos/barred-warbler.jpg" alt="Barred Warbler held in the hand at Ngulia." />
+          <img :src="publicAsset('generated/photos/barred-warbler.jpg')" alt="Barred Warbler held in the hand at Ngulia." />
           <figcaption>
             Barred Warbler is one of the Ngulia species that helped clarify complex split moult
             strategies between Eurasia and East Africa.
@@ -195,6 +195,7 @@
 </template>
 
 <script setup>
+import { publicAsset } from '../lib/publicAsset'
 import StatCard from '../components/StatCard.vue'
 
 const heroPills = ['Ageing', 'Moult', 'Sexing', 'Biometrics', 'Afrotropical migrants']

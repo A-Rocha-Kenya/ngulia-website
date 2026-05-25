@@ -141,6 +141,7 @@
 import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { A11y, Keyboard, Navigation, Thumbs } from 'swiper/modules'
+import { publicAsset } from '../lib/publicAsset'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
@@ -171,7 +172,7 @@ const timeline = [
     title: 'A chance observation becomes a migration story.',
     text:
       'Soon after the lodge opened, misty nights at the floodlights revealed large falls of Palaearctic migrants and turned an unexpected event into the start of a serious field project.',
-    image: '/history-archive/ngulia-1973-night-graeme.jpg',
+    image: publicAsset('history-archive/ngulia-1973-night-graeme.jpg'),
     imageAlt: 'Historic night photograph showing birds around the illuminated lodge area.'
   },
   {
@@ -180,7 +181,7 @@ const timeline = [
     title: 'The phenomenon is confirmed through regular fieldwork.',
     text:
       'Near-continuous seasonal coverage made the falls measurable, showing that the migration pattern repeated and could support long-term ringing work rather than isolated observations.',
-    image: '/history-archive/djp-pole.jpg',
+    image: publicAsset('history-archive/djp-pole.jpg'),
     imageAlt: 'Fieldworker carrying a pole with bird bags during ringing work.'
   },
   {
@@ -189,7 +190,7 @@ const timeline = [
     title: 'Methods evolve and the project becomes a real station.',
     text:
       'Night catching below the floodlights expanded, catches increased sharply, and Ngulia moved from remarkable field notes to a sustained ringing operation recognised across Africa.',
-    image: '/history-archive/ngulia-2010-nets.jpg',
+    image: publicAsset('history-archive/ngulia-2010-nets.jpg'),
     imageAlt: 'Ringing team working beside mist nets in misty conditions.'
   },
   {
@@ -198,7 +199,7 @@ const timeline = [
     title: 'Larger teams and a steadier operation reshape the work.',
     text:
       'The 1990s brought bigger teams, a shift in dawn netting, and more stable lighting, making the annual sessions more robust and more collaborative.',
-    image: '/history-archive/ngulia-2012-field-1.jpg',
+    image: publicAsset('history-archive/ngulia-2012-field-1.jpg'),
     imageAlt: 'Field team gathered around a table during a ringing session.'
   },
   {
@@ -207,7 +208,7 @@ const timeline = [
     title: 'The dataset becomes continental in scale and broader in method.',
     text:
       'By 2012 the ringing totals and recoveries had reached a remarkable scale, and radar work soon widened the picture from grounded birds to migration moving overhead across Tsavo.',
-    image: '/history-archive/ngulia-2011-group.jpg',
+    image: publicAsset('history-archive/ngulia-2011-group.jpg'),
     imageAlt: 'Group portrait of project participants at Ngulia.'
   },
   {
@@ -216,7 +217,7 @@ const timeline = [
     title: 'The habitat changes, but the project keeps evolving.',
     text:
       'Elephant-driven habitat change altered the daytime netting area, showing that the history of Ngulia is not only about data and people, but also about a field site that keeps changing.',
-    image: '/history-archive/ngulia-2010-elephants.jpg',
+    image: publicAsset('history-archive/ngulia-2010-elephants.jpg'),
     imageAlt: 'Elephants in vegetation near the Ngulia field area.'
   }
 ]
@@ -224,7 +225,7 @@ const timeline = [
 const reviewSections = [
   {
     title: 'A migration story discovered by accident',
-    image: '/history-archive/ngulia-1973-night-graeme.jpg',
+    image: publicAsset('history-archive/ngulia-1973-night-graeme.jpg'),
     imageAlt: 'Historic night photograph showing birds around the illuminated lodge area.',
     figureCaption: 'Historic night image from Ngulia showing the early light-attraction phenomenon.',
     paragraphs: [
@@ -234,7 +235,7 @@ const reviewSections = [
   },
   {
     title: 'Why Ngulia is special',
-    image: '/history-archive/ngulia-2010-nets.jpg',
+    image: publicAsset('history-archive/ngulia-2010-nets.jpg'),
     imageAlt: 'Ringing team standing beside mist nets in cloudy conditions.',
     figureCaption: 'Mist-netting scene that reflects the conditions and field setting behind the Ngulia phenomenon.',
     paragraphs: [
@@ -244,7 +245,7 @@ const reviewSections = [
   },
   {
     title: 'From discovery to long-term ringing station',
-    image: '/history-archive/djp-pole.jpg',
+    image: publicAsset('history-archive/djp-pole.jpg'),
     imageAlt: 'Fieldworker holding a pole with multiple bird bags.',
     figureCaption: 'Archive image of ringing logistics as the annual sessions became more regular and organised.',
     paragraphs: [
@@ -255,7 +256,7 @@ const reviewSections = [
   },
   {
     title: 'Growth, international collaboration and scientific value',
-    image: '/history-archive/ngulia-2012-field-1.jpg',
+    image: publicAsset('history-archive/ngulia-2012-field-1.jpg'),
     imageAlt: 'Project team working together around a table at Ngulia.',
     figureCaption: 'Later field teams reflect the more collaborative and international scale of the project.',
     paragraphs: [
@@ -265,7 +266,7 @@ const reviewSections = [
   },
   {
     title: 'What the birds reveal',
-    image: '/history-archive/ngulia-2011-group.jpg',
+    image: publicAsset('history-archive/ngulia-2011-group.jpg'),
     imageAlt: 'Group portrait of Ngulia participants and collaborators.',
     figureCaption: 'The long record depends on repeated work by people returning to the site over many seasons.',
     paragraphs: [
@@ -276,7 +277,7 @@ const reviewSections = [
   },
   {
     title: 'Recent years and new technology',
-    image: '/history-archive/ngulia-2012-field-1.jpg',
+    image: publicAsset('history-archive/ngulia-2012-field-1.jpg'),
     imageAlt: 'Field team gathered around equipment and notes during project work.',
     figureCaption: 'Recent seasons combine long-running field practice with newer tools and broader scientific questions.',
     paragraphs: [
@@ -287,7 +288,7 @@ const reviewSections = [
   },
   {
     title: 'A living project',
-    image: '/history-archive/ngulia-2010-elephants.jpg',
+    image: publicAsset('history-archive/ngulia-2010-elephants.jpg'),
     imageAlt: 'Elephants moving through vegetation near Ngulia.',
     figureCaption: 'Elephant pressure has helped reshape the vegetation around the lodge and the daytime netting area.',
     paragraphs: [
