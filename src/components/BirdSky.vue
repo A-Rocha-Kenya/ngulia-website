@@ -14,6 +14,9 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, reactive } from 'vue'
 
+const REFERENCE_VIEWPORT_WIDTH = 1280
+const REFERENCE_VIEWPORT_HEIGHT = 800
+
 const props = defineProps({
   settings: {
     type: Object,
@@ -73,6 +76,8 @@ const birdSkyStyle = computed(() => {
   const fadeEnd = resolvedSettings.value.lowerFadeEnd
   const fadeMid = Math.min(fadeEnd - 4, fadeStart + 12)
   return {
+    '--bird-unit-x': `max(1vw, ${(REFERENCE_VIEWPORT_WIDTH / 100).toFixed(2)}px)`,
+    '--bird-unit-y': `max(1vh, ${(REFERENCE_VIEWPORT_HEIGHT / 100).toFixed(2)}px)`,
     '--bird-fade-start': `${fadeStart}%`,
     '--bird-fade-mid': `${fadeMid}%`,
     '--bird-fade-end': `${fadeEnd}%`
@@ -95,6 +100,10 @@ function parseCssNumber(value) {
   return Number.parseFloat(value)
 }
 
+function toFlightDistance(value, axis) {
+  return `calc(${value.toFixed(2)} * var(${axis === 'x' ? '--bird-unit-x' : '--bird-unit-y'}))`
+}
+
 function buildFlightStyle(baseStyle) {
   const settings = resolvedSettings.value
   const top = parseCssNumber(baseStyle.top)
@@ -109,10 +118,10 @@ function buildFlightStyle(baseStyle) {
     top: `${(top + randomFloat(-settings.topJitter, settings.topJitter)).toFixed(2)}%`,
     left: `${(left + randomFloat(-settings.topJitter, settings.topJitter)).toFixed(2)}%`,
     '--bird-duration': `${Math.max(2.35, duration + randomFloat(-settings.durationJitter, settings.durationJitter)).toFixed(2)}s`,
-    '--bird-start-x': `${(-10 + randomFloat(-settings.startJitter, settings.startJitter)).toFixed(2)}vw`,
-    '--bird-start-y': `${(12 + randomFloat(-settings.startJitter * 1.33, settings.startJitter * 1.33)).toFixed(2)}vh`,
-    '--bird-end-x': `${(x + randomFloat(-settings.endJitter, settings.endJitter)).toFixed(2)}vw`,
-    '--bird-end-y': `${(y + randomFloat(-settings.endJitter, settings.endJitter)).toFixed(2)}vh`,
+    '--bird-start-x': toFlightDistance(-10 + randomFloat(-settings.startJitter, settings.startJitter), 'x'),
+    '--bird-start-y': toFlightDistance(12 + randomFloat(-settings.startJitter * 1.33, settings.startJitter * 1.33), 'y'),
+    '--bird-end-x': toFlightDistance(x + randomFloat(-settings.endJitter, settings.endJitter), 'x'),
+    '--bird-end-y': toFlightDistance(y + randomFloat(-settings.endJitter, settings.endJitter), 'y'),
     '--bird-tilt-end': `${(tilt + randomFloat(3.5, 5.5)).toFixed(2)}deg`
   }
 }

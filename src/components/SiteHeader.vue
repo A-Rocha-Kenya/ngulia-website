@@ -22,14 +22,29 @@
         </div>
       </nav>
 
-      <details class="mobile-nav">
-        <summary>Menu</summary>
+      <details ref="mobileNavRef" class="mobile-nav">
+        <summary aria-label="Open site menu">
+          <span class="mobile-nav__trigger-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <span class="sr-only">Menu</span>
+        </summary>
         <div class="mobile-nav__panel">
           <div v-for="group in navigation" :key="group.label" class="mobile-nav__group">
             <div class="mobile-nav__label">{{ group.label }}</div>
-            <RouterLink v-for="item in group.items" :key="item.to" :to="item.to" class="mobile-nav__link">
-              {{ item.label }}
-            </RouterLink>
+            <div class="mobile-nav__links">
+              <RouterLink
+                v-for="item in group.items"
+                :key="item.to"
+                :to="item.to"
+                class="mobile-nav__link"
+                @click="closeMobileNav"
+              >
+                {{ item.label }}
+              </RouterLink>
+            </div>
           </div>
         </div>
       </details>
@@ -38,8 +53,18 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { ref, watch } from 'vue'
+import { RouterLink, useRoute } from 'vue-router'
 import { navigation } from '../data/siteContent.js'
+
+const route = useRoute()
+const mobileNavRef = ref(null)
+
+function closeMobileNav() {
+  if (mobileNavRef.value) mobileNavRef.value.open = false
+}
+
+watch(() => route.fullPath, closeMobileNav)
 </script>
 
 <style scoped>
@@ -172,14 +197,48 @@ import { navigation } from '../data/siteContent.js'
     justify-content: center;
     list-style: none;
     cursor: pointer;
-    padding: 0.8rem 0.9rem;
+    width: 4.7rem;
+    height: 3.8rem;
     border-radius: 999px;
     border: 1px solid var(--border);
     background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .mobile-nav[open] summary {
+    background: rgba(255, 217, 120, 0.08);
+    border-color: rgba(255, 217, 120, 0.24);
   }
 
   .mobile-nav summary::-webkit-details-marker {
     display: none;
+  }
+
+  .mobile-nav__trigger-icon {
+    display: grid;
+    gap: 0.28rem;
+  }
+
+  .mobile-nav__trigger-icon span {
+    display: block;
+    width: 1.35rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  .mobile-nav[open] .mobile-nav__trigger-icon span:nth-child(1) {
+    transform: translateY(0.38rem) rotate(45deg);
+  }
+
+  .mobile-nav[open] .mobile-nav__trigger-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav[open] .mobile-nav__trigger-icon span:nth-child(3) {
+    transform: translateY(-0.38rem) rotate(-45deg);
   }
 
   .mobile-nav__panel {
@@ -200,18 +259,36 @@ import { navigation } from '../data/siteContent.js'
     margin-top: 0.8rem;
   }
 
+  .mobile-nav__group {
+    padding-left: 0.95rem;
+    border-left: 1px solid rgba(255, 217, 120, 0.16);
+  }
+
   .mobile-nav__label {
     color: var(--accent-soft);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.74rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .mobile-nav__links {
+    display: grid;
+    gap: 0.2rem;
+    padding-left: 0.4rem;
   }
 
   .mobile-nav__link {
     display: block;
-    padding: 0.6rem 0;
+    padding: 0.65rem 0.8rem;
+    border-radius: 0.8rem;
     color: var(--text-soft);
+  }
+
+  .mobile-nav__link:hover,
+  .mobile-nav__link.router-link-active {
+    color: var(--text);
+    background: rgba(255, 217, 120, 0.08);
   }
 }
 
@@ -239,5 +316,17 @@ import { navigation } from '../data/siteContent.js'
     right: 0;
     width: min(20rem, calc(100vw - 1rem));
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 </style>

@@ -215,19 +215,10 @@
         <div class="panel-inner home-map-section__inner">
           <div ref="mapContentRef" class="home-map-section__content">
             <div class="home-map-section__intro">
-              <div class="section-label">Migration In Motion</div>
-              <h2 class="home-map-section__title">
-                Ngulai at the center of the East african Flyway
-              </h2>
-              <p class="home-map-section__text">
-                During November and December, long-distance Afro-Palearctic migrants moving from
-                Europe and Asia toward southern Africa pass in large numbers across the Tsavo region
-                of southeastern Kenya.
-              </p>
-              <p class="home-map-section__note">
-                This illustration was generated using a particle simulation built from ring
-                recoveries linked to Ngulia, with an artificially induced pull toward Ngulia.
-              </p>
+              <div class="section-label">{{ homeMapIntro.eyebrow }}</div>
+              <h2 class="home-map-section__title">{{ homeMapIntro.title }}</h2>
+              <p class="home-map-section__text">{{ homeMapIntro.text }}</p>
+              <p class="home-map-section__note">{{ homeMapIntro.note }}</p>
             </div>
 
             <div class="home-map-section__stats">
@@ -246,6 +237,10 @@
 
           <div class="home-map-section__viewport">
             <div ref="mapRef" class="map-wrap home-overview__map"></div>
+            <div class="home-map-section__mobile-headline">
+              <div class="section-label">{{ homeMapIntro.eyebrow }}</div>
+              <h2 class="home-map-section__title">{{ homeMapIntro.title }}</h2>
+            </div>
             <div ref="nguliaMarkerRef" class="ngulia-marker-overlay">
               <button
                 class="ngulia-marker-overlay__button"
@@ -438,6 +433,17 @@ import {
   syncParticleCount,
 } from "../lib/migrationAnimation.js";
 const NGULIA_COORDS = [38.211134674309974, -3.0140288001023605];
+const MOBILE_MAP_BREAKPOINT = 640;
+const MOBILE_MAP_FOCUS_X = 0.76;
+const MOBILE_MAP_FOCUS_Y = 0.54;
+const homeMapIntro = {
+  eyebrow: "Migration In Motion",
+  title: "Ngulia at the center of the East African Flyway",
+  text:
+    "During November and December, long-distance Afro-Palearctic migrants moving from Europe and Asia toward southern Africa pass in large numbers across the Tsavo region of southeastern Kenya.",
+  note:
+    "This illustration was generated using a particle simulation built from ring recoveries linked to Ngulia, with an artificially induced pull toward Ngulia.",
+};
 const summary = reactive({
   totalBirds: 0,
   totalSpecies: 0,
@@ -528,21 +534,31 @@ function syncMapViewport() {
   if (!map) return;
 
   const mapRect = mapRef.value?.getBoundingClientRect();
-  const contentRect = mapContentRef.value?.getBoundingClientRect();
-  if (!mapRect || !contentRect) return;
+  if (!mapRect) return;
 
-  const contentMaxWidth =
-    Number.parseFloat(
-      getComputedStyle(document.documentElement).getPropertyValue("--content-width"),
-    ) || 1180;
   const mapWidth = mapRect?.width ?? 0;
   const mapHeight = mapRect?.height ?? 0;
-  const boundedContentWidth = Math.min(contentMaxWidth, Math.max(0, mapWidth - 32));
-  const contentSideInset = Math.max(16, Math.round((mapWidth - boundedContentWidth) / 2));
-  const desiredPoint = [
-    (contentRect.right - mapRect.left + (mapWidth - contentSideInset)) / 2,
-    mapHeight / 2 + 20,
-  ];
+  const isMobileMap = window.innerWidth <= MOBILE_MAP_BREAKPOINT;
+  let desiredPoint;
+
+  if (isMobileMap) {
+    desiredPoint = [mapWidth * MOBILE_MAP_FOCUS_X, mapHeight * MOBILE_MAP_FOCUS_Y];
+  } else {
+    const contentRect = mapContentRef.value?.getBoundingClientRect();
+    if (!contentRect) return;
+
+    const contentMaxWidth =
+      Number.parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue("--content-width"),
+      ) || 1180;
+    const boundedContentWidth = Math.min(contentMaxWidth, Math.max(0, mapWidth - 32));
+    const contentSideInset = Math.max(16, Math.round((mapWidth - boundedContentWidth) / 2));
+
+    desiredPoint = [
+      (contentRect.right - mapRect.left + (mapWidth - contentSideInset)) / 2,
+      mapHeight / 2 + 20,
+    ];
+  }
 
   for (let i = 0; i < 6; i += 1) {
     const nguliaPoint = map.project(NGULIA_COORDS);
@@ -586,6 +602,13 @@ function startMigrationAnimation() {
   if (animationFrame) cancelAnimationFrame(animationFrame);
   lastFrameTime = 0;
   animationFrame = requestAnimationFrame(renderMigrationFrame);
+}
+
+function refreshMapViewport({ resize = false } = {}) {
+  if (!map) return;
+  if (resize) map.resize();
+  syncMapViewport();
+  updateNguliaMarker();
 }
 
 onMounted(async () => {
@@ -632,18 +655,11 @@ onMounted(async () => {
   startMigrationAnimation();
   map.once("idle", syncMapViewport);
   window.setTimeout(() => {
-    if (!map) return;
-    map.resize();
-    syncMapViewport();
-    updateNguliaMarker();
+    refreshMapViewport({ resize: true });
   }, 320);
 
   resizeObserver = new ResizeObserver(() => {
-    if (map) {
-      map.resize();
-      syncMapViewport();
-      updateNguliaMarker();
-    }
+    refreshMapViewport({ resize: true });
   });
   resizeObserver.observe(mapRef.value);
   if (mapContentRef.value) resizeObserver.observe(mapContentRef.value);
@@ -662,8 +678,7 @@ watch(selectedMapStyle, (style) => {
   if (!map) return;
   map.setStyle(style);
   map.once("styledata", () => {
-    syncMapViewport();
-    updateNguliaMarker();
+    refreshMapViewport();
   });
 });
 
@@ -927,6 +942,10 @@ onBeforeUnmount(() => {
   position: absolute;
   inset: 0;
   min-height: 0;
+}
+
+.home-map-section__mobile-headline {
+  display: none;
 }
 
 .home-view__section {
@@ -1265,6 +1284,11 @@ onBeforeUnmount(() => {
     min-height: calc(100svh - var(--header-height));
   }
 
+  .home-hero__content {
+    padding-left: 0.95rem;
+    padding-right: 0.75rem;
+  }
+
   .hero-controls {
     right: 0.75rem;
   }
@@ -1284,12 +1308,18 @@ onBeforeUnmount(() => {
   }
 
   .home-map-section__panel {
-    min-height: max(44rem, calc(100svh - var(--header-height)));
+    min-height: auto;
   }
 
-  .home-map-section__inner,
+  .home-map-section__inner {
+    display: grid;
+    min-height: auto;
+  }
+
   .home-map-section__viewport {
-    min-height: calc(100svh - var(--header-height));
+    position: relative;
+    inset: auto;
+    min-height: min(34rem, calc(100svh - var(--header-height) - 1.5rem));
   }
 
   .home-hero__title {
@@ -1306,35 +1336,58 @@ onBeforeUnmount(() => {
   }
 
   .home-overview__map {
-    min-height: auto;
+    min-height: 100%;
   }
 
   .home-map-section__content {
     width: 100%;
-    min-height: inherit;
+    min-height: auto;
     align-content: start;
-    padding: 1rem 0.75rem 13rem;
+    gap: 1rem;
+    order: 2;
+    padding: 1rem 0.75rem 1rem;
+    background: rgba(6, 10, 15, 0.78);
   }
 
   .home-map-section__content::before {
-    right: 0;
-    bottom: auto;
-    height: 68%;
-    background: linear-gradient(
-      180deg,
-      rgba(6, 10, 15, 0.94) 0%,
-      rgba(6, 10, 15, 0.82) 56%,
-      rgba(6, 10, 15, 0.24) 86%,
-      rgba(6, 10, 15, 0) 100%
-    );
+    display: none;
   }
 
   .home-map-section__intro {
     padding-top: 0;
   }
 
+  .home-map-section__intro .section-label,
+  .home-map-section__intro .home-map-section__title {
+    display: none;
+  }
+
   .home-map-section__title {
     max-width: 10ch;
+  }
+
+  .home-map-section__mobile-headline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    display: grid;
+    gap: 0.45rem;
+    padding: 1rem 0.75rem 3.8rem;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 10, 15, 0.94) 0%,
+      rgba(6, 10, 15, 0.76) 52%,
+      rgba(6, 10, 15, 0) 100%
+    );
+    pointer-events: none;
+  }
+
+  .home-map-section__mobile-headline .home-map-section__title {
+    margin: 0;
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    line-height: 0.96;
   }
 
   .home-map-section__stats {
