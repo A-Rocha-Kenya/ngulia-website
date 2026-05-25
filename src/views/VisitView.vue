@@ -223,13 +223,11 @@
 </template>
 
 <script setup>
-import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import StatCard from '../components/StatCard.vue'
-
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN || ''
+import mapboxgl from '../lib/mapbox.js'
 
 const contactEmail = 'colin.jackson@arocha.org'
 const contactEmailHref = `mailto:${contactEmail}?subject=Ngulia%20visit%20or%20volunteer%20enquiry`

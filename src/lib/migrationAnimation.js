@@ -168,7 +168,8 @@ export function migrationDeckLayers(particles, controls) {
       getColor: (item) => [255, 217, 120, Math.round(80 * item.alpha)],
       getWidth: 1.35,
       widthUnits: 'pixels',
-      rounded: true,
+      jointRounded: true,
+      capRounded: true,
       parameters: { depthTest: false },
     }),
     new ScatterplotLayer({

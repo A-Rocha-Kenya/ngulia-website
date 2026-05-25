@@ -422,7 +422,6 @@
 </template>
 
 <script setup>
-import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MapboxOverlay } from "@deck.gl/mapbox";
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from "vue";
@@ -431,14 +430,13 @@ import BirdSky from "../components/BirdSky.vue";
 import StatCard from "../components/StatCard.vue";
 import { historyVisitorBoxes, homeCards } from "../data/siteContent.js";
 import { getDashboardData, getMigrationProbabilitiesData } from "../lib/generatedData.js";
+import mapboxgl from "../lib/mapbox.js";
 import {
   advanceParticles,
   createMigrationParticles,
   migrationDeckLayers,
   syncParticleCount,
 } from "../lib/migrationAnimation.js";
-
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN || "";
 const NGULIA_COORDS = [38.211134674309974, -3.0140288001023605];
 const summary = reactive({
   totalBirds: 0,

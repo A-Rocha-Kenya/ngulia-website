@@ -233,15 +233,13 @@
 </template>
 
 <script setup>
-import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import Multiselect from '@vueform/multiselect'
 import '@vueform/multiselect/themes/default.css'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import EChart from '../components/EChart.vue'
 import { getDashboardData, getRecoveriesData, getSpeciesRange, getSpeciesRangesIndex } from '../lib/generatedData.js'
-
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN || ''
+import mapboxgl from '../lib/mapbox.js'
 const NGULIA_COORDS = [38.211134674309974, -3.0140288001023605]
 const SPECIES_COLORS = ['#4ea7a0', '#f2c14e', '#c46a3a', '#9c9b4a', '#7093c6', '#ff7d7d', '#8ccf7e', '#cf93ff', '#65d0e8', '#f0a35d']
 const EMPTY_FEATURE_COLLECTION = { type: 'FeatureCollection', features: [] }
