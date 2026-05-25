@@ -1,0 +1,28 @@
+{
+  "name": "ngulia-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:full": "npm run preprocess && npm run build",
+    "preview": "vite preview",
+    "preprocess": ". .venv/bin/activate && python scripts/preprocess.py"
+  },
+  "dependencies": {
+    "@deck.gl/core": "^9.3.2",
+    "@deck.gl/layers": "^9.3.2",
+    "@deck.gl/mapbox": "^9.3.2",
+    "@vueform/multiselect": "^2.6.11",
+    "echarts": "^6.1.0",
+    "mapbox-gl": "^3.24.0",
+    "swiper": "^12.1.4",
+    "vue": "^3.5.34",
+    "vue-router": "^5.0.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.0.14"
+  }
+}

@@ -1,0 +1,589 @@
+{
+  "metadata": {
+    "source": "BirdLife International and Handbook of the Birds of the World",
+    "crs": "EPSG:4326",
+    "simplifyDegrees": 0.12,
+    "seasonalTypes": {
+      "2": "breeding",
+      "3": "wintering"
+    }
+  },
+  "summary": {
+    "totalSpecies": 60,
+    "matchedSpecies": 13,
+    "availableSpecies": 13
+  },
+  "species": {
+    "avibase-B675E006": {
+      "id": "avibase-B675E006",
+      "name": "Marsh Warbler",
+      "latin": "Acrocephalus palustris",
+      "birdlifeId": "22714741",
+      "available": true,
+      "birdlifeScientificName": "Acrocephalus palustris",
+      "birdlifeCommonName": "Marsh Warbler",
+      "path": "species-ranges/avibase-B675E006.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-6EC66752": {
+      "id": "avibase-6EC66752",
+      "name": "Thrush Nightingale",
+      "latin": "Luscinia luscinia",
+      "birdlifeId": "22709691",
+      "available": true,
+      "birdlifeScientificName": "Luscinia luscinia",
+      "birdlifeCommonName": "Thrush Nightingale",
+      "path": "species-ranges/avibase-6EC66752.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-14AFBA82": {
+      "id": "avibase-14AFBA82",
+      "name": "Common Whitethroat",
+      "latin": "Curruca communis",
+      "birdlifeId": "22716910",
+      "available": true,
+      "birdlifeScientificName": "Curruca communis",
+      "birdlifeCommonName": "Common Whitethroat",
+      "path": "species-ranges/avibase-14AFBA82.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-58C502EA": {
+      "id": "avibase-58C502EA",
+      "name": "Barn Swallow",
+      "latin": "Hirundo rustica",
+      "birdlifeId": "22712252",
+      "available": true,
+      "birdlifeScientificName": "Hirundo rustica",
+      "birdlifeCommonName": "Barn Swallow",
+      "path": "species-ranges/avibase-58C502EA.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 5
+    },
+    "avibase-2B020CA0": {
+      "id": "avibase-2B020CA0",
+      "name": "River Warbler",
+      "latin": "Locustella fluviatilis",
+      "birdlifeId": "22714679",
+      "available": true,
+      "birdlifeScientificName": "Locustella fluviatilis",
+      "birdlifeCommonName": "River Warbler",
+      "path": "species-ranges/avibase-2B020CA0.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-73BD4B29": {
+      "id": "avibase-73BD4B29",
+      "name": "White-throated Robin",
+      "latin": "Irania gutturalis",
+      "birdlifeId": "22709758",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-F2CEFD1A": {
+      "id": "avibase-F2CEFD1A",
+      "name": "Red-backed Shrike",
+      "latin": "Lanius collurio",
+      "birdlifeId": "22705001",
+      "available": true,
+      "birdlifeScientificName": "Lanius collurio",
+      "birdlifeCommonName": "Red-backed Shrike",
+      "path": "species-ranges/avibase-F2CEFD1A.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-88F4B969": {
+      "id": "avibase-88F4B969",
+      "name": "Willow Warbler",
+      "latin": "Phylloscopus trochilus",
+      "birdlifeId": "22715240",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-EE8206E7": {
+      "id": "avibase-EE8206E7",
+      "name": "Spotted Flycatcher",
+      "latin": "Muscicapa striata",
+      "birdlifeId": "22709192",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-7C7F0DEE": {
+      "id": "avibase-7C7F0DEE",
+      "name": "Common Nightingale",
+      "latin": "Luscinia megarhynchos",
+      "birdlifeId": "22709696",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-97166F72": {
+      "id": "avibase-97166F72",
+      "name": "Isabelline Shrike",
+      "latin": "Lanius isabellinus",
+      "birdlifeId": "103718693",
+      "available": true,
+      "birdlifeScientificName": "Lanius isabellinus",
+      "birdlifeCommonName": "Isabelline Shrike",
+      "path": "species-ranges/avibase-97166F72.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-791DED18": {
+      "id": "avibase-791DED18",
+      "name": "Olive-tree Warbler",
+      "latin": "Hippolais olivetorum",
+      "birdlifeId": "22714908",
+      "available": true,
+      "birdlifeScientificName": "Hippolais olivetorum",
+      "birdlifeCommonName": "Olive-tree Warbler",
+      "path": "species-ranges/avibase-791DED18.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-1EA60B94": {
+      "id": "avibase-1EA60B94",
+      "name": "Barred Warbler",
+      "latin": "Curruca nisoria",
+      "birdlifeId": "22716937",
+      "available": true,
+      "birdlifeScientificName": "Curruca nisoria",
+      "birdlifeCommonName": "Barred Warbler",
+      "path": "species-ranges/avibase-1EA60B94.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-0D42A253": {
+      "id": "avibase-0D42A253",
+      "name": "Basra Reed Warbler",
+      "latin": "Acrocephalus griseldis",
+      "birdlifeId": "22714757",
+      "available": true,
+      "birdlifeScientificName": "Acrocephalus griseldis",
+      "birdlifeCommonName": "Basra Reed-warbler",
+      "path": "species-ranges/avibase-0D42A253.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-A6A4FC63": {
+      "id": "avibase-A6A4FC63",
+      "name": "Garden Warbler",
+      "latin": "Sylvia borin",
+      "birdlifeId": "22716906",
+      "available": true,
+      "birdlifeScientificName": "Sylvia borin",
+      "birdlifeCommonName": "Garden Warbler",
+      "path": "species-ranges/avibase-A6A4FC63.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-30FEC6BE": {
+      "id": "avibase-30FEC6BE",
+      "name": "Western House Martin",
+      "latin": "Delichon urbicum",
+      "birdlifeId": "103811886",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-BAE527A2": {
+      "id": "avibase-BAE527A2",
+      "name": "Eastern Olivaceous Warbler",
+      "latin": "Iduna pallida",
+      "birdlifeId": "22734747",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-B68BD0D2": {
+      "id": "avibase-B68BD0D2",
+      "name": "Rufous-tailed Scrub Robin",
+      "latin": "Cercotrichas galactotes",
+      "birdlifeId": "22709936",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-B10AD127": {
+      "id": "avibase-B10AD127",
+      "name": "Upcher's Warbler",
+      "latin": "Hippolais languida",
+      "birdlifeId": "22714904",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-80D4B0FE": {
+      "id": "avibase-80D4B0FE",
+      "name": "European Nightjar",
+      "latin": "Caprimulgus europaeus",
+      "birdlifeId": "22689887",
+      "available": true,
+      "birdlifeScientificName": "Caprimulgus europaeus",
+      "birdlifeCommonName": "European Nightjar",
+      "path": "species-ranges/avibase-80D4B0FE.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 2
+    },
+    "avibase-736D38E7": {
+      "id": "avibase-736D38E7",
+      "name": "Common Rock Thrush",
+      "latin": "Monticola saxatilis",
+      "birdlifeId": "22708257",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-365F5E97": {
+      "id": "avibase-365F5E97",
+      "name": "Tree Pipit",
+      "latin": "Anthus trivialis",
+      "birdlifeId": "22718546",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-FED5AED5": {
+      "id": "avibase-FED5AED5",
+      "name": "Sedge Warbler",
+      "latin": "Acrocephalus schoenobaenus",
+      "birdlifeId": "22714700",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-3F0EE474": {
+      "id": "avibase-3F0EE474",
+      "name": "Common Reed Warbler",
+      "latin": "Acrocephalus scirpaceus",
+      "birdlifeId": "22714722",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-7451A628": {
+      "id": "avibase-7451A628",
+      "name": "European Roller",
+      "latin": "Coracias garrulus",
+      "birdlifeId": "22682860",
+      "available": true,
+      "birdlifeScientificName": "Coracias garrulus",
+      "birdlifeCommonName": "European Roller",
+      "path": "species-ranges/avibase-7451A628.geojson",
+      "rangeTypes": [
+        "breeding",
+        "wintering"
+      ],
+      "featureCount": 3
+    },
+    "avibase-B283E332": {
+      "id": "avibase-B283E332",
+      "name": "Great Reed Warbler",
+      "latin": "Acrocephalus arundinaceus",
+      "birdlifeId": "104317670",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-DF526047": {
+      "id": "avibase-DF526047",
+      "name": "Northern Wheatear",
+      "latin": "Oenanthe oenanthe",
+      "birdlifeId": "103773898",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-61F9065B": {
+      "id": "avibase-61F9065B",
+      "name": "Eurasian Blackcap",
+      "latin": "Sylvia atricapilla",
+      "birdlifeId": "22716901",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-2FB34D83": {
+      "id": "avibase-2FB34D83",
+      "name": "Pied Wheatear",
+      "latin": "Oenanthe pleschanka",
+      "birdlifeId": "22710308",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-BF0A0954": {
+      "id": "avibase-BF0A0954",
+      "name": "Jacobin Cuckoo",
+      "latin": "Clamator jacobinus",
+      "birdlifeId": "22683800",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-7C3959D6": {
+      "id": "avibase-7C3959D6",
+      "name": "Plain Nightjar",
+      "latin": "Caprimulgus inornatus",
+      "birdlifeId": "22689977",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-E6C6F746": {
+      "id": "avibase-E6C6F746",
+      "name": "Isabelline Wheatear",
+      "latin": "Oenanthe isabellina",
+      "birdlifeId": "22710333",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-D1D9B619": {
+      "id": "avibase-D1D9B619",
+      "name": "Donaldson Smith's Nightjar",
+      "latin": "Caprimulgus donaldsoni",
+      "birdlifeId": "22689940",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-92A772BB": {
+      "id": "avibase-92A772BB",
+      "name": "Eurasian Golden Oriole",
+      "latin": "Oriolus oriolus",
+      "birdlifeId": "103692938",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-B3D2C3C5": {
+      "id": "avibase-B3D2C3C5",
+      "name": "Common Cuckoo",
+      "latin": "Cuculus canorus",
+      "birdlifeId": "22683873",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-94A1C447": {
+      "id": "avibase-94A1C447",
+      "name": "Sand Martin",
+      "latin": "Riparia riparia",
+      "birdlifeId": "103815961",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-5983D677": {
+      "id": "avibase-5983D677",
+      "name": "Western Yellow Wagtail",
+      "latin": "Motacilla flava",
+      "birdlifeId": "103822349",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-2C7AA154": {
+      "id": "avibase-2C7AA154",
+      "name": "Eurasian Scops Owl",
+      "latin": "Otus scops",
+      "birdlifeId": "155019854",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-FF41B79F": {
+      "id": "avibase-FF41B79F",
+      "name": "Lesser Cuckoo",
+      "latin": "Cuculus poliocephalus",
+      "birdlifeId": "22683889",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-8E67DC5F": {
+      "id": "avibase-8E67DC5F",
+      "name": "Wood Sandpiper",
+      "latin": "Tringa glareola",
+      "birdlifeId": "22693247",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-DB376A66": {
+      "id": "avibase-DB376A66",
+      "name": "Eurasian Sparrowhawk",
+      "latin": "Accipiter nisus",
+      "birdlifeId": "22695624",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-869C978C": {
+      "id": "avibase-869C978C",
+      "name": "Icterine Warbler",
+      "latin": "Hippolais icterina",
+      "birdlifeId": "22714916",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-06DD9D95": {
+      "id": "avibase-06DD9D95",
+      "name": "Common Redstart",
+      "latin": "Phoenicurus phoenicurus",
+      "birdlifeId": "22710055",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-7AAD57AC": {
+      "id": "avibase-7AAD57AC",
+      "name": "Little Bittern",
+      "latin": "Botaurus minutus",
+      "birdlifeId": "22735766",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-FB96690D": {
+      "id": "avibase-FB96690D",
+      "name": "Montane Nightjar",
+      "latin": "Caprimulgus poliocephalus",
+      "birdlifeId": "22730103",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-A7B17EFC": {
+      "id": "avibase-A7B17EFC",
+      "name": "Green Sandpiper",
+      "latin": "Tringa ochropus",
+      "birdlifeId": "22693243",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-7E257242": {
+      "id": "avibase-7E257242",
+      "name": "Corn Crake",
+      "latin": "Crex crex",
+      "birdlifeId": "22692543",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-66AA3934": {
+      "id": "avibase-66AA3934",
+      "name": "European Bee-eater",
+      "latin": "Merops apiaster",
+      "birdlifeId": "22683756",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-54494BCE": {
+      "id": "avibase-54494BCE",
+      "name": "Slender-tailed Nightjar",
+      "latin": "Caprimulgus clarus",
+      "birdlifeId": "22690012",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-572C4C7F": {
+      "id": "avibase-572C4C7F",
+      "name": "Wood Warbler",
+      "latin": "Phylloscopus sibilatrix",
+      "birdlifeId": "22715260",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-B2E6AB9F": {
+      "id": "avibase-B2E6AB9F",
+      "name": "Eurasian Wryneck",
+      "latin": "Jynx torquilla",
+      "birdlifeId": "22680683",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-E91E287A": {
+      "id": "avibase-E91E287A",
+      "name": "Eurasian Hobby",
+      "latin": "Falco subbuteo",
+      "birdlifeId": "22696460",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-47210561": {
+      "id": "avibase-47210561",
+      "name": "Ortolan Bunting",
+      "latin": "Emberiza hortulana",
+      "birdlifeId": "22720916",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-6429024D": {
+      "id": "avibase-6429024D",
+      "name": "Grey Heron",
+      "latin": "Ardea cinerea",
+      "birdlifeId": "22696993",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-3D67C56A": {
+      "id": "avibase-3D67C56A",
+      "name": "Great Spotted Cuckoo",
+      "latin": "Clamator glandarius",
+      "birdlifeId": "22683819",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-A0EDAEA2": {
+      "id": "avibase-A0EDAEA2",
+      "name": "Whinchat",
+      "latin": "Saxicola rubetra",
+      "birdlifeId": "22710156",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-5BFC242D": {
+      "id": "avibase-5BFC242D",
+      "name": "Singing Bush Lark",
+      "latin": "Mirafra javanica",
+      "birdlifeId": "103765775",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-4E6EF3F9": {
+      "id": "avibase-4E6EF3F9",
+      "name": "Common Swift",
+      "latin": "Apus apus",
+      "birdlifeId": "22686800",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-319D044A": {
+      "id": "avibase-319D044A",
+      "name": "Red-throated Pipit",
+      "latin": "Anthus cervinus",
+      "birdlifeId": "22718560",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    },
+    "avibase-6FE118C6": {
+      "id": "avibase-6FE118C6",
+      "name": "Eastern Red-rumped Swallow",
+      "latin": "Cecropis daurica",
+      "birdlifeId": "",
+      "available": false,
+      "missingReason": "not-included-in-recovery"
+    }
+  }
+}
