@@ -86,10 +86,10 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue'
-import { getPublicationsData } from '../lib/generatedData.js'
+import { computed, ref } from 'vue'
+import publicationsData from '../data/publicationsData.json'
 
-const publications = ref({ highlights: [], entries: [] })
+const publications = ref(publicationsData)
 const filterText = ref('')
 
 const sortedEntries = computed(() =>
@@ -136,10 +136,6 @@ const groupedEntries = computed(() => {
   return order
     .map((label) => ({ label, entries: groups.get(label) || [] }))
     .filter((group) => group.entries.length)
-})
-
-onMounted(async () => {
-  publications.value = await getPublicationsData()
 })
 
 function splitAuthors(authors = '') {

@@ -32,7 +32,7 @@
       "description": "A long-form talk by David Pearson on the discovery of the Ngulia phenomenon, how the fieldwork developed, and what the ringing records have revealed.",
       "openAccess": true,
       "isPdf": false,
-      "embedUrl": "https://www.youtube-nocookie.com/embed/3o5bN61VKLc?rel=0&modestbranding=1&controls=0&iv_load_policy=3"
+      "embedUrl": "https://www.youtube-nocookie.com/embed/?rel=0&modestbranding=1&controls=0&iv_load_policy=3"
     }
   ],
   "entries": [
@@ -151,8 +151,8 @@
     {
       "entryType": "article",
       "key": "LINDSTRM1993",
-      "title": "The moult of Barred Warblers <i>Sylvia nisoria</i> in Kenya\u2014evidence for a split wing\u2010moult pattern initiated during the birds' first winter*",
-      "authors": "\u00c5KE LINDSTR\u00d6M and DAVID J. PEARSON and DENNIS HASSELQUIST and ANDERS HEDENSTR\u00d6M and STAFFAN BENSCH and SUSANNE \u00c5KESSON",
+      "title": "The moult of Barred Warblers <i>Sylvia nisoria<\/i> in Kenya—evidence for a split wing‐moult pattern initiated during the birds' first winter*",
+      "authors": "ÅKE LINDSTRÖM and DAVID J. PEARSON and DENNIS HASSELQUIST and ANDERS HEDENSTRÖM and STAFFAN BENSCH and SUSANNE ÅKESSON",
       "journal": "Ibis",
       "year": "1993",
       "volume": "135",
@@ -160,7 +160,7 @@
       "pages": "403-409",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1474-919X.1993.tb02112.x",
       "doi": "10.1111/j.1474-919X.1993.tb02112.x",
-      "abstract": "<p> The moult of Barred Warblers <italic>Sylvia nisoria</italic> was studied during three winter seasons in southeastern Kenya at a southward passage site (Ngulia) and a wintering site (Mtito Andei). Most Barred Warblers migrating through Ngulia in November had yet to commence winter moult. These birds probably moulted subsequently in winter in northern Tanzania. In December, birds were found in heavy moult at Mtito Andei, and some of these birds were known to stay throughout the winter. By contrast, most birds reaching southeastern Kenya from late December onwards had already completed part or all of their winter moult, presumably at stopover sites in northern and eastern Kenya or in Ethiopia. Thus, winter moult in Barred Warblers takes place mainly in late November and December, either just before or soon after the final leg of autumn migration. In general, first\u2010year birds renewed all tertials and tail feathers, about three to five secondaries per wing and commonly also the outer one to four large primaries per wing. Adults renewed all tertials and tail feathers, almost all secondaries and only occasionally an outer primary. The replacement of relatively fresh juvenile secondaries during the birds' first winter implies that the split moult pattern of this species (secondaries, tertials and tail moulted in winter; primaries and tertials in summer) is endogenously controlled. </p>",
+      "abstract": "<p> The moult of Barred Warblers <italic>Sylvia nisoria<\/italic> was studied during three winter seasons in southeastern Kenya at a southward passage site (Ngulia) and a wintering site (Mtito Andei). Most Barred Warblers migrating through Ngulia in November had yet to commence winter moult. These birds probably moulted subsequently in winter in northern Tanzania. In December, birds were found in heavy moult at Mtito Andei, and some of these birds were known to stay throughout the winter. By contrast, most birds reaching southeastern Kenya from late December onwards had already completed part or all of their winter moult, presumably at stopover sites in northern and eastern Kenya or in Ethiopia. Thus, winter moult in Barred Warblers takes place mainly in late November and December, either just before or soon after the final leg of autumn migration. In general, first‐year birds renewed all tertials and tail feathers, about three to five secondaries per wing and commonly also the outer one to four large primaries per wing. Adults renewed all tertials and tail feathers, almost all secondaries and only occasionally an outer primary. The replacement of relatively fresh juvenile secondaries during the birds' first winter implies that the split moult pattern of this species (secondaries, tertials and tail moulted in winter; primaries and tertials in summer) is endogenously controlled. <\/p>",
       "isPdf": false,
       "openAccess": false
     },
@@ -231,7 +231,7 @@
     {
       "entryType": "article",
       "key": "Pearson1983",
-      "title": "Moult in the river Warbler <i>Locustella fluviatilis</i>",
+      "title": "Moult in the river Warbler <i>Locustella fluviatilis<\/i>",
       "authors": "D. J. Pearson and G. C. Backhurst",
       "journal": "Ringing \\& Migration",
       "year": "1983",
@@ -240,7 +240,7 @@
       "pages": "227-230",
       "url": "http://www.tandfonline.com/doi/abs/10.1080/03078698.1983.9673810",
       "doi": "10.1080/03078698.1983.9673810",
-      "abstract": "Observations on River Warblers Locustella fluyiatilis caught on passage in Kenya have helped to identify some unusual moult features in this species. Adult and first year birds have a complete moult during January-March in winter quarters in southeast Africa, renewing their primaries in the typical passerine sequence. Adults also have an extensive autumn body moult, usually delayed until arrival in a stopover area in northeast Africa. In addition, practically all adults have a partial wing moult in northeast Africa during September-November. This involves the outermost one to five pairs of large primaries, which are therefore replaced twice each year. The outermost new autumn primaries appear to complete growth before the innermost. \u00a9 1983 Taylor & Francis Group, LLC.",
+      "abstract": "Observations on River Warblers Locustella fluyiatilis caught on passage in Kenya have helped to identify some unusual moult features in this species. Adult and first year birds have a complete moult during January-March in winter quarters in southeast Africa, renewing their primaries in the typical passerine sequence. Adults also have an extensive autumn body moult, usually delayed until arrival in a stopover area in northeast Africa. In addition, practically all adults have a partial wing moult in northeast Africa during September-November. This involves the outermost one to five pairs of large primaries, which are therefore replaced twice each year. The outermost new autumn primaries appear to complete growth before the innermost. © 1983 Taylor & Francis Group, LLC.",
       "isPdf": false,
       "openAccess": false
     },
@@ -368,7 +368,7 @@
       "pages": "71-79",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2028.1977.tb00380.x",
       "doi": "10.1111/j.1365-2028.1977.tb00380.x",
-      "abstract": "<p> A survey of blood parasites of birds from Ngulia in Kenya was carried out during the period November\u2010December for the years 1973\u20131975. A total of 468 birds was examined of which 179 (38.2%) were infected with one or more parasites. Together with a re\u2010examination of material from previous surveys for taxonomic purposes, the following species were identified; <italic>Haemoproteus anthi, H. centropi, H. columbae, H. coraciae, H. fallisi, H. fringillae, H. lanii, H. morneti, H. orizivorae, H. sanguinis, H. tendeiroi, H. zosteropsi, Leucocytozoon brimonti, L. coccyzus, L. dinizi, L. dub\u2010reuili, L. eurystomi, L. fringillinarum, L. marchouxi, Plasmodium relictum, P. rouxi, P. vaughani, Trypanosoma everetti, T. mayae, T. pycnonoti</italic> and <italic>Babesiu rustica</italic> . Unidentified species of haemogregarines, <italic>Aegyptianella</italic> , Rickettsia and microfilaria were also observed. The significance of migrant birds as reservoirs of infection, together with the probable seasonality of patent infections in the resident population is discussed. </p>",
+      "abstract": "<p> A survey of blood parasites of birds from Ngulia in Kenya was carried out during the period November‐December for the years 1973–1975. A total of 468 birds was examined of which 179 (38.2%) were infected with one or more parasites. Together with a re‐examination of material from previous surveys for taxonomic purposes, the following species were identified; <italic>Haemoproteus anthi, H. centropi, H. columbae, H. coraciae, H. fallisi, H. fringillae, H. lanii, H. morneti, H. orizivorae, H. sanguinis, H. tendeiroi, H. zosteropsi, Leucocytozoon brimonti, L. coccyzus, L. dinizi, L. dub‐reuili, L. eurystomi, L. fringillinarum, L. marchouxi, Plasmodium relictum, P. rouxi, P. vaughani, Trypanosoma everetti, T. mayae, T. pycnonoti<\/italic> and <italic>Babesiu rustica<\/italic> . Unidentified species of haemogregarines, <italic>Aegyptianella<\/italic> , Rickettsia and microfilaria were also observed. The significance of migrant birds as reservoirs of infection, together with the probable seasonality of patent infections in the resident population is discussed. <\/p>",
       "isPdf": false,
       "openAccess": false
     },
@@ -400,7 +400,7 @@
       "pages": "78-105",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1474-919X.1976.tb02012.x",
       "doi": "10.1111/j.1474-919X.1976.tb02012.x",
-      "abstract": "<p> Since 1969 remarkable numbers of night migrants have been attracted during misty conditions in November and December to three 1 kW floodlights at a game viewing lodge on the northeastern side of the Ngulia ridge, a small range of hills in the Tsavo National Park (West), southeast Kenya. The main species involved have been Palaearctic passerines, principally the Marsh Warbler <italic>Acrocephalus palustris</italic> , the Whitethroat <italic>Sylvia communis</italic> and the Sprosser <italic>Luscinia luscinia.</italic> </p>",
+      "abstract": "<p> Since 1969 remarkable numbers of night migrants have been attracted during misty conditions in November and December to three 1 kW floodlights at a game viewing lodge on the northeastern side of the Ngulia ridge, a small range of hills in the Tsavo National Park (West), southeast Kenya. The main species involved have been Palaearctic passerines, principally the Marsh Warbler <italic>Acrocephalus palustris<\/italic> , the Whitethroat <italic>Sylvia communis<\/italic> and the Sprosser <italic>Luscinia luscinia.<\/italic> <\/p>",
       "isPdf": false,
       "openAccess": false
     }

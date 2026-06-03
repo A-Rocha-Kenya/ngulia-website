@@ -117,7 +117,7 @@
         </article>
 
         <figure class="panel molt-photo-card molt-photo-card--species">
-          <img :src="publicAsset('generated/photos/barred-warbler.jpg')" alt="Barred Warbler held in the hand at Ngulia." />
+          <img :src="publicAsset('species-photos/barred-warbler.jpg')" alt="Barred Warbler held in the hand at Ngulia." />
           <figcaption>
             Barred Warbler is one of the Ngulia species that helped clarify complex split moult
             strategies between Eurasia and East Africa.

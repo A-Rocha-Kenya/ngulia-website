@@ -217,7 +217,27 @@
     <section class="dashboard-grid dashboard-grid--charts">
       <article class="panel temporal-panel">
         <div class="panel-inner">
-          <h2 class="panel-title">Annual totals</h2>
+          <div class="species-treemap-toolbar">
+            <h2 class="panel-title">Annual totals</h2>
+            <div class="species-scale-switch" role="tablist" aria-label="Annual totals scale">
+              <button
+                type="button"
+                class="species-scale-switch__button"
+                :class="{ 'is-active': annualScale === 'linear' }"
+                @click="annualScale = 'linear'"
+              >
+                Normal
+              </button>
+              <button
+                type="button"
+                class="species-scale-switch__button"
+                :class="{ 'is-active': annualScale === 'log' }"
+                @click="annualScale = 'log'"
+              >
+                Log
+              </button>
+            </div>
+          </div>
           <EChart :option="annualOption" />
         </div>
       </article>
@@ -274,6 +294,7 @@ const mapRef = ref(null)
 const mapShellRef = ref(null)
 const recoveryTableWrapRef = ref(null)
 const treemapScale = ref('linear')
+const annualScale = ref('log')
 const selectedMapStyle = ref('mapbox://styles/mapbox/dark-v11')
 const showMapSettings = ref(false)
 const isMapFullscreen = ref(false)
@@ -393,11 +414,21 @@ const annualAverageCount = computed(() => {
   return counts.reduce((sum, value) => sum + value, 0) / counts.length
 })
 const annualMaxCount = computed(() => Math.max(...annualTotals.value, ...annualSelectedData.value, 0))
-const annualAxisTicks = computed(() => buildAnnualAxisTicks(annualMaxCount.value))
-const annualAxisMax = computed(() => annualAxisTicks.value.at(-1)?.position ?? 1)
+const annualAxisTicks = computed(() => (annualScale.value === 'log' ? buildAnnualAxisTicks(annualMaxCount.value) : []))
+const annualAxisMax = computed(() =>
+  annualScale.value === 'log' ? annualAxisTicks.value.at(-1)?.position ?? 1 : undefined
+)
 const activePhenologyRows = computed(() => selectedSpecies.value?.phenology || dashboard.value.phenology || [])
 const phenologySeasonData = computed(() => toSeasonSeries(activePhenologyRows.value))
 const phenologyEffortData = computed(() => toSeasonSeries(dashboard.value.phenology || []))
+const phenologyAxisMax = computed(() => {
+  const maxSeasonDay = Math.max(
+    369,
+    ...phenologySeasonData.value.map((row) => row.seasonDay),
+    ...phenologyEffortData.value.map((row) => row.seasonDay)
+  )
+  return Math.ceil(maxSeasonDay / 15) * 15
+})
 const phenologyTotalCount = computed(() => phenologySeasonData.value.reduce((sum, row) => sum + (row.count || 0), 0))
 const usePhenologyBars = computed(() => selectedSpecies.value && phenologyTotalCount.value < PHENOLOGY_BAR_THRESHOLD)
 const smoothedPhenologyData = computed(() => smoothSeries(phenologySeasonData.value, 'count', 7))
@@ -534,7 +565,7 @@ const annualOption = computed(() => ({
     nameTextStyle: { color: activeChartColorText.value, fontWeight: 700 },
     min: 0,
     max: annualAxisMax.value,
-    interval: 1,
+    interval: annualScale.value === 'log' ? 1 : undefined,
     axisTick: { show: false },
     axisLabel: {
       color: '#a8b3c2',
@@ -621,7 +652,7 @@ const phenologyOption = computed(() => ({
   xAxis: {
     type: 'value',
     min: 295,
-    max: 369,
+    max: phenologyAxisMax.value,
     interval: 15,
     axisLabel: {
       color: '#a8b3c2',
@@ -796,12 +827,14 @@ function toSeasonSeries(rows) {
 
 function toAnnualScaleValue(value) {
   const numericValue = Number(value || 0)
+  if (annualScale.value === 'linear') return numericValue
   if (numericValue <= 0) return 0
   return 1 + Math.log10(numericValue)
 }
 
 function fromAnnualScaleValue(value) {
   const numericValue = Number(value || 0)
+  if (annualScale.value === 'linear') return numericValue
   if (numericValue <= 0) return 0
   return Math.max(1, Math.round(10 ** (numericValue - 1)))
 }
@@ -817,6 +850,9 @@ function buildAnnualAxisTicks(maxCount) {
 }
 
 function formatAnnualAxisLabel(value, ticks) {
+  if (annualScale.value === 'linear') {
+    return value >= 1000 ? `${Math.round(value / 1000)}k` : String(value)
+  }
   const match = ticks.find((tick) => Math.abs(tick.position - value) < 0.001)
   if (!match) return ''
   if (match.rawValue === 0) return '0'

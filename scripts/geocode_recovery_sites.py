@@ -48,8 +48,23 @@ def load_env_file(path: Path) -> None:
 
 load_env_file(PIPELINE_ENV_PATH)
 
-SOURCE_DATA_DIR = Path(os.getenv("NGULIA_SOURCE_DATA_DIR", str(ROOT_DIR.parent / "data"))).expanduser()
-RECOVERIES_PATH = SOURCE_DATA_DIR / "Data - management and analysis" / "05 Recoveries" / "0709 Ngulia Recoveries and Controls.xls"
+def resolve_project_data_dir() -> Path:
+    configured = os.getenv("NGULIA_PROJECT_DATA_DIR") or os.getenv("NGULIA_SOURCE_DATA_DIR")
+    if configured:
+        return Path(configured).expanduser()
+
+    legacy_path = ROOT_DIR.parent / "data"
+    if legacy_path.exists():
+        return legacy_path
+
+    raise RuntimeError(
+        f"Missing NGULIA_PROJECT_DATA_DIR. Set it in {PIPELINE_ENV_PATH} to the research workspace data directory."
+    )
+
+
+PROJECT_DATA_DIR = resolve_project_data_dir()
+EXTERNAL_DATA_DIR = Path(os.getenv("NGULIA_EXTERNAL_DATA_DIR", str(PROJECT_DATA_DIR / "external"))).expanduser()
+RECOVERIES_PATH = EXTERNAL_DATA_DIR / "ngulia_management_analysis" / "05 Recoveries" / "0709 Ngulia Recoveries and Controls.xls"
 
 
 def override_key(site: object, province: object, country: object) -> str:

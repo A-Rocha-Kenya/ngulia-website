@@ -210,8 +210,8 @@ export const scienceSections = {
       {
         title: 'Core source datasets',
         bullets: [
-          '1991-2023 Ngulia Ringing Data MASTER.xlsx is the main ringing source file',
-          '0709 Ngulia Recoveries and Controls.xls supports the recovery views',
+          'Curated daily counts support the ringing summaries and phenology views',
+          'Curated recoveries support the recovery views and migration probability surface',
           'Raw spreadsheets remain the source of truth and are not read directly in the frontend'
         ]
       },
@@ -221,7 +221,7 @@ export const scienceSections = {
           'Dashboard summary tables and yearly totals',
           'Species-level summaries and phenology tables',
           'Recovery map files prepared for Mapbox GL JS',
-          'Publication and reference metadata used across the site'
+          'Migration probability grids used on the home page'
         ]
       },
       {
