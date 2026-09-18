@@ -8,8 +8,8 @@
   },
   "summary": {
     "totalSpecies": 66,
-    "matchedSpecies": 0,
-    "availableSpecies": 0
+    "matchedSpecies": 13,
+    "availableSpecies": 13
   },
   "species": {
     "avibase-B675E006": {
@@ -17,40 +17,50 @@
       "name": "Marsh Warbler",
       "latin": "Acrocephalus palustris",
       "birdlifeId": "22714741",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-B675E006.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-6EC66752": {
       "id": "avibase-6EC66752",
       "name": "Thrush Nightingale",
       "latin": "Luscinia luscinia",
       "birdlifeId": "22709691",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-6EC66752.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-14AFBA82": {
       "id": "avibase-14AFBA82",
       "name": "Greater Whitethroat",
       "latin": "Curruca communis",
       "birdlifeId": "22716910",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-14AFBA82.geojson",
+      "rangeTypes": ["breeding", "wintering"],
+      "featureCount": 2
     },
     "avibase-58C502EA": {
       "id": "avibase-58C502EA",
       "name": "Barn Swallow",
       "latin": "Hirundo rustica",
       "birdlifeId": "22712252",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-58C502EA.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 5
     },
     "avibase-2B020CA0": {
       "id": "avibase-2B020CA0",
       "name": "River Warbler",
       "latin": "Locustella fluviatilis",
       "birdlifeId": "22714679",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-2B020CA0.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-73BD4B29": {
       "id": "avibase-73BD4B29",
@@ -73,8 +83,10 @@
       "name": "Red-backed Shrike",
       "latin": "Lanius collurio",
       "birdlifeId": "22705001",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-F2CEFD1A.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-EE8206E7": {
       "id": "avibase-EE8206E7",
@@ -89,8 +101,10 @@
       "name": "Isabelline Shrike",
       "latin": "Lanius isabellinus",
       "birdlifeId": "103718693",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-97166F72.geojson",
+      "rangeTypes": ["breeding", "wintering"],
+      "featureCount": 2
     },
     "avibase-7C7F0DEE": {
       "id": "avibase-7C7F0DEE",
@@ -105,32 +119,40 @@
       "name": "Basra Reed Warbler",
       "latin": "Acrocephalus griseldis",
       "birdlifeId": "22714757",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-0D42A253.geojson",
+      "rangeTypes": ["breeding", "wintering"],
+      "featureCount": 2
     },
     "avibase-1EA60B94": {
       "id": "avibase-1EA60B94",
       "name": "Barred Warbler",
       "latin": "Curruca nisoria",
       "birdlifeId": "22716937",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-1EA60B94.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-791DED18": {
       "id": "avibase-791DED18",
       "name": "Olive-tree Warbler",
       "latin": "Hippolais olivetorum",
       "birdlifeId": "22714908",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-791DED18.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-A6A4FC63": {
       "id": "avibase-A6A4FC63",
       "name": "Garden Warbler",
       "latin": "Sylvia borin",
       "birdlifeId": "22716906",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-A6A4FC63.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-B68BD0D2": {
       "id": "avibase-B68BD0D2",
@@ -169,8 +191,10 @@
       "name": "Eurasian Nightjar",
       "latin": "Caprimulgus europaeus",
       "birdlifeId": "22689887",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-80D4B0FE.geojson",
+      "rangeTypes": ["wintering", "breeding"],
+      "featureCount": 2
     },
     "avibase-736D38E7": {
       "id": "avibase-736D38E7",
@@ -225,8 +249,10 @@
       "name": "European Roller",
       "latin": "Coracias garrulus",
       "birdlifeId": "22682860",
-      "available": false,
-      "missingReason": "not-exported"
+      "available": true,
+      "path": "species-ranges/avibase-7451A628.geojson",
+      "rangeTypes": ["breeding", "wintering"],
+      "featureCount": 3
     },
     "avibase-61F9065B": {
       "id": "avibase-61F9065B",

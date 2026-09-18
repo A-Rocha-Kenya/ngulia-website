@@ -108,7 +108,7 @@
         <div class="panel-inner recovery-map-panel__inner">
           <div ref="mapShellRef" class="dashboard-map-shell">
             <div class="dashboard-map__header">
-              <div class="dashboard-map__label">Recovery map</div>
+              <div class="dashboard-map__label">Distribution and recovery map</div>
               <div class="photo-chip dashboard-map__badge">{{ formatNumber(filteredRecoveries.length) }} rings · {{ formatNumber(filteredLocationsCount) }} locations</div>
             </div>
             <div class="map-controls">
@@ -339,7 +339,9 @@ const selectedSpeciesRangeMeta = computed(() =>
   selectedSpecies.value ? speciesRangesIndex.value.species?.[selectedSpecies.value.id] || null : null
 )
 const selectedRecoveryCount = computed(() => speciesRecoveries.value.length)
-const showRecoveriesSection = computed(() => !selectedSpecies.value || selectedRecoveryCount.value > 0)
+const showRecoveriesSection = computed(() =>
+  !selectedSpecies.value || selectedRecoveryCount.value > 0 || selectedSpeciesRangeMeta.value?.available
+)
 const activeTotalBirds = computed(() => selectedSpecies.value?.total || summary.value.totalBirds || 0)
 
 const speciesRecoveries = computed(() => {

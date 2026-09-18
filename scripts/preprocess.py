@@ -90,7 +90,6 @@ def main() -> None:
             static_geojson_exists = (
                 bool(static_path)
                 and (OUTPUT_DIR / static_path).exists()
-                and static_meta.get("available") is True
             )
             if static_geojson_exists:
                 merged_meta.update(
