@@ -1,0 +1,9 @@
+[project]
+name = "ngulia-website"
+version = "0.1.0"
+description = "Data synchronization utilities for the Ngulia website"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "openpyxl==3.1.5",
+  "xlrd==2.0.2",
+]

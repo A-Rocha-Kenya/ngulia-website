@@ -36,8 +36,11 @@ Only the `VITE_` token is used by the frontend build. The Google key is only use
 
 ```bash
 npm install
+uv sync
 npm run dev
 ```
+
+Python dependencies are managed by [uv](https://docs.astral.sh/uv/). `uv sync` creates or updates the local `.venv`; use `uv run <command>` to run a Python command in that environment. The project uses Python 3.12, as specified in `.python-version`.
 
 ## Build
 
@@ -52,6 +55,7 @@ Regenerate processed data first, then build:
 ```bash
 Rscript /absolute/path/to/Ngulia/scripts/07_build_curated_recoveries.R
 Rscript /absolute/path/to/Ngulia/scripts/08_build_website_data.R
+uv sync
 npm run preprocess
 npm run build
 ```
