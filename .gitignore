@@ -5,3 +5,9 @@ dist
 scripts/__pycache__
 .env.local
 .env.*.local
+
+# Local copy of the Zenodo dataset
+/data/zenodo/
+
+# Local source assets for curated species ranges
+/data/reference/

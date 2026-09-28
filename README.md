@@ -1,36 +1,15 @@
 # Ngulia Website
 
-Standalone GitHub Pages repository for the core Ngulia website.
+Standalone Vue website for the Ngulia project, deployed to GitHub Pages.
 
-## What is in this repo
+## Repository layout
 
-- `src/`: Vue app code
-- `public/generated/`: committed processed website data
-- `public/history-archive/`: curated historical images used by the site
-- `public/partner-logos/`: partner assets used by the site
-- `scripts/`: sync and helper scripts for the website repo
-
-## What is not in this repo
-
-Raw research inputs and the website data pipeline stay outside the repo. In particular, the large ringing spreadsheets, recovery workbook, BirdLife geodatabase, source photo archive, and the R export script are not part of this website repository.
-
-## Environment split
-
-Public website config goes in `.env.local`:
-
-```bash
-VITE_MAPBOX_TOKEN=...
-```
-
-Private pipeline config goes in `.env.pipeline.local`:
-
-```bash
-NGULIA_PROJECT_DATA_DIR=/absolute/path/to/Ngulia/data
-GOOGLE_MAPS_API_KEY=...
-```
-
-Only the `VITE_` token is used by the frontend build. The Google key is only used by `scripts/geocode_recovery_sites.py`.
-`NGULIA_PROJECT_DATA_DIR` should point to the research workspace `data/` directory so `scripts/preprocess.py` can copy the prepared website export from `derived/website/`.
+- `src/`: Vue app code.
+- `scripts/preprocess.py`: builds website resources from the Zenodo dataset.
+- `data/zenodo/`: complete local dataset copy, ignored by Git.
+- `data/reference/birdlife_ranges/`: local source range assets, ignored by Git.
+- `public/generated/`: committed dashboard, recovery, migration, and species-range resources.
+- `public/species-photos/`, `public/history-archive/`, `public/partner-logos/`: website assets.
 
 ## Local development
 
@@ -40,62 +19,58 @@ uv sync
 npm run dev
 ```
 
-Python dependencies are managed by [uv](https://docs.astral.sh/uv/). `uv sync` creates or updates the local `.venv`; use `uv run <command>` to run a Python command in that environment. The project uses Python 3.12, as specified in `.python-version`.
+Set `VITE_MAPBOX_TOKEN` in `.env.local`. Python uses the project's Python 3.12 environment through `uv`; preprocessing itself uses only the standard library.
 
-## Build
+## Data source
 
-Build the website from the committed processed data:
+Copy `.env.pipeline.example` to `.env.pipeline.local` and set the published Zenodo record ID:
 
 ```bash
-npm run build
+NGULIA_ZENODO_RECORD_ID=<published-record-id>
 ```
 
-Regenerate processed data first, then build:
+Each preprocessing run resolves the latest published version and downloads the five CSVs and two documentation files into `data/zenodo/`. `source.json` records the resolved record ID, DOI, and URL. This folder gives you a complete copy of the Zenodo output; the full ringing dataset is not bundled into the public website.
+
+No live Zenodo record is configured yet. Until publication, use the dataset repository's export:
 
 ```bash
-Rscript /absolute/path/to/Ngulia/scripts/07_build_curated_recoveries.R
-Rscript /absolute/path/to/Ngulia/scripts/08_build_website_data.R
-uv sync
+npm run preprocess -- --source-dir /absolute/path/to/ngulia-dataset/exports/zenodo
+```
+
+Alternatively set `NGULIA_ZENODO_SOURCE_DIR` in `.env.pipeline.local`. A configured local source takes precedence; remove it when switching to Zenodo. There is no dependency on research workbooks or an R website exporter.
+
+## Preprocessing
+
+```bash
 npm run preprocess
+```
+
+The Python pipeline reads:
+
+- `taxonomy.csv`: names, classification, external identifiers, and project codes, joined by `avibase_id`.
+- `daily_counts.csv`: annual totals, species totals, and seasonal phenology.
+- `recoveries.csv`: recovery records and migration prototype densities.
+
+It produces `dashboard.json`, `recoveries.json`, `migration-probabilities.json`, and `species-ranges-index.json` in `public/generated/`. The dashboard totals use daily counts; capture and daily-count totals in taxonomy describe separate sources and are not added together. Phenology uses the existing non-leap calendar; `effortYears` counts seasons with a positive record for that calendar day.
+
+Recovery distances are great-circle distances from the published coordinates to Ngulia. Durations are calculated only when both dates have day precision; partial and interval dates retain their published precision. Recovery IDs are website identifiers based on row order in the downloaded file. Encounter types come from Zenodo; internal encounter methods and curation status are not present in the public dataset.
+
+Species photos are matched by Avibase filename. Curated range GeoJSON files remain in `public/generated/species-ranges/`; their static metadata is kept in `scripts/species_ranges.json` and used to rebuild the species-range index. Publications and other static assets remain in this repository. Migration grids preserve the existing prototype's coarse land mask, smoothing parameters, and 500 km exclusion band; they are illustrations, not estimated migration distributions.
+
+## Build and deployment
+
+Build from the committed resources:
+
+```bash
 npm run build
 ```
 
-Or in one step:
+Download or copy the dataset, regenerate resources, and build:
 
 ```bash
 npm run build:full
 ```
 
-## Preprocessing notes
+For GitHub Pages, set the repository Actions variable `NGULIA_ZENODO_RECORD_ID` once the dataset is published. The deployment workflow will then regenerate resources from the latest version before building. Until that variable is set, deployment uses the committed resources.
 
-The website no longer builds its data payload from raw research inputs.
-
-The research workspace now prepares website data in two steps:
-
-```bash
-Rscript /absolute/path/to/Ngulia/scripts/07_build_curated_recoveries.R
-Rscript /absolute/path/to/Ngulia/scripts/08_build_website_data.R
-```
-
-The website export step reads only:
-
-- `data/curated/daily_counts.csv`
-- `data/curated/recoveries.csv`
-- taxonomy files in `data/staging/website/config/`, `data/staging/ring_events/config/`, and `data/reference/taxonomy/`
-
-It writes the website-ready files to:
-
-- `NGULIA_PROJECT_DATA_DIR/derived/website/`
-
-Then this repo only copies that directory into:
-
-- `public/generated/`
-
-The sync script expects these paths to exist in `derived/website/`:
-
-- `dashboard.json`
-- `recoveries.json`
-- `migration-probabilities.json`
-- `species-ranges-index.json`
-
-Static publications data and species photos now live in this repo and are not part of the generated data sync.
+`scripts/geocode_recovery_sites.py` is a separate manual maintenance tool for historical source evidence. Its research data path and Google Maps key are not needed for preprocessing or deployment.

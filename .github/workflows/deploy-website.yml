@@ -37,14 +37,17 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v6
 
-      - name: Install GDAL
-        run: sudo apt-get update && sudo apt-get install -y gdal-bin
-
       - name: Install Python dependencies
         run: uv sync --locked
 
       - name: Install Node dependencies
         run: npm ci
+
+      - name: Generate resources from latest Zenodo dataset
+        if: ${{ vars.NGULIA_ZENODO_RECORD_ID != '' }}
+        env:
+          NGULIA_ZENODO_RECORD_ID: ${{ vars.NGULIA_ZENODO_RECORD_ID }}
+        run: npm run preprocess
 
       - name: Build website
         env:

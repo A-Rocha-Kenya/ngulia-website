@@ -180,7 +180,7 @@
                   <th class="recovery-table__date">Ringed</th>
                   <th class="recovery-table__date">Controlled</th>
                   <th v-if="!selectedSpecies">Species</th>
-                  <th>Comment</th>
+                  <th>Encounter</th>
                   <th>Duration</th>
                   <th>Distance</th>
                 </tr>
@@ -202,7 +202,7 @@
                   <td class="recovery-table__date">{{ recoveryTableRingDate(item) || 'n/a' }}</td>
                   <td class="recovery-table__date">{{ recoveryTableRecoverDate(item) || 'n/a' }}</td>
                   <td v-if="!selectedSpecies" class="recovery-table__species">{{ item.speciesName }}</td>
-                  <td>{{ item.method || '' }}</td>
+                  <td>{{ item.encounterType || '' }}</td>
                   <td>{{ formatDurationDays(item.durationDays) }}</td>
                   <td>{{ item.distanceKm ? `${formatNumber(item.distanceKm)} km` : 'n/a' }}</td>
                 </tr>
@@ -358,7 +358,7 @@ const filteredRecoveries = computed(() => {
       item.recoverCountry,
       item.recoverSite,
       item.recoverProvince,
-      item.method,
+      item.encounterType,
       item.ringDate,
       item.recoverDate
     ]
@@ -973,7 +973,7 @@ function recoveryDateLabel(item) {
     else if (start || end) parts.push(start || end)
   }
   if (duration) parts.push(duration)
-  if (item.method) parts.push(item.method)
+  if (item.encounterType) parts.push(item.encounterType)
   return parts.join(' &middot; ')
 }
 
